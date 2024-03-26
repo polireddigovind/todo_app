@@ -33,14 +33,14 @@ uvicorn main:app --reload
 
 ## Api Endpoints
 
-** POST /CreateUser/{user_id}:**
+**POST /CreateUser/{user_id}:**
 
 Description: create a new user with the user_id
 Parameters:user_id
 * Authentication Required
 
 
-** GET /Get Tasks{user_id,Task_id}:**
+**GET /Get Tasks{user_id,Task_id}:**
 
 Description: retrieve all the taks for a given user_id.
 Parameters:user_id,Task_id
@@ -100,8 +100,12 @@ requirements.txt: List of Python dependencies required for the project.
 # Contributing
 Contributions to this project are welcome! To contribute:
 
-1)Fork the repository.
+1)Fork the repository
+
 2)Create a new branch (git checkout -b feature/your-feature).
+
 3)Make your changes and commit them (git commit -am 'Add new feature').
+
 4)Push to the branch (git push origin feature/your-feature).
+
 5)Create a new pull request.
