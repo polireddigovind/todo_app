@@ -24,7 +24,7 @@ To set up the project locally, follow these steps:
 
 1)To run the FastAPI server, execute the following command:
 ```bash
-uvicorn main:app --reload
+uvicorn todo_app:app --reload
 ```
 2)This will start the FastAPI server on http://localhost:8000 by default.
 
