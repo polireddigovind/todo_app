@@ -1,13 +1,8 @@
 # todo_app
-todo_app backend connecting to the oracle database
-
-# Project Name
-
-Terabh Intelligence - Personalized AI Assistant Backend
+todo_app backend Application connecting to oracle database
 
 ## Introduction
-
-Terabh Intelligence is dedicated to crafting a powerful and personalized AI assistant. This project focuses on building the backend for the AI assistant, with seamless integration with various services such as Spotify, Gmail, and Calendar. The backend is developed using Python and FastAPI.
+creating backend application for the todo_app for users having user_ids and their tasks to complete.Authentication is also include for user safety.
 
 ## Installation
 
@@ -28,97 +23,78 @@ To set up the project locally, follow these steps:
 
 ## Usage
 
-To run the FastAPI server, execute the following command:
+1)To run the FastAPI server, execute the following command:
 ```bash
 uvicorn main:app --reload
 
+2)This will start the FastAPI server on http://localhost:8000 by default.
 
-API Endpoints
-Create User
-Creates a new user.
+3)Open your web browser and go to http://localhost:8000/docs to access the Swagger UI for testing the API endpoints.
+4)you can also use tools like [Postman](https://www.postman.com/)
 
-URL: /createUser/
-Method: POST
-Request Body:
-{
-  "id": "string"
-}
-Response:
-{
-  "message": "User created successfully"
-}
-Get Tasks
-Retrieves tasks for a user.
+**API Endpoints**
 
-URL: /getTask/
-Method: GET
-Query Parameters:
-user_id (required): User ID
-task_id (optional): Task ID
-Response:
-{
-  "task_id": 1,
-  "task_name": "Task 1"
-}
-Create Task
-Creates a new task and associates it with the user.
+POST /CreateUser/{user_id}:
 
-URL: /createTask/
-Method: POST
-Request Body:
-json
-Copy code
-{
-  "task_name": "string"
-}
-Response:
-json
-Copy code
-{
-  "message": "Task created successfully"
-}
-Delete Task
-Deletes a task for the specified user ID and task ID.
+Description: create a new user with the user_id
+Parameters:user_id
+* Authentication Required
 
-URL: /deleteTask/
-Method: DELETE
-Query Parameters:
-user_id (required): User ID
-task_id (required): Task ID
-Response:
-json
-Copy code
-{
-  "message": "Task deleted successfully"
-}
-Update Task
-Updates a task for the specified user ID and task ID.
 
-URL: /updateTask/
-Method: PUT
-Request Body:
-json
-Copy code
-{
-  "task_name": "string"
-}
-Response:
-json
-Copy code
-{
-  "message": "Task updated successfully"
-}
-Mark Task Done
-Marks a task as done for the specified user ID and task ID.
+GET /Get Tasks{user_id,Task_id}:
 
-URL: /markTaskDone/
-Method: PUT
-Query Parameters:
-user_id (required): User ID
-task_id (required): Task ID
-Response:
-json
-Copy code
-{
-  "message": "Task marked as done"
+Description: retrieve all the taks for a given user_id.
+Parameters:user_id,Task_id
+* Authentication not Required
+
+POST /CreateTask{User_id}:
+
+Description: Create a new task for a user.
+Payload:
+Parameters:user_id
+* Authentication Required
+
+
+DELETE /Delete tasks/{user_id,task_id}:
+
+Description: Delete a task by user_id and task_id.
+Parameters:user_id ,task_id
+* Authentication Required
+
+
+PUT /Update_tasks/{user_id,task_id}:
+
+Description: Update a task by user_id and task_id.
+Parameters:user_id,task_id
+task: Update description of the task.
+* Authentication Required
+
+PUT /markTaskDone/{user_id,task_id}:
+
+Description: Update a task by user_id and task_id.
+Parameters:user_id,task_id
+task: Update status of the task.
+* Authentication Required
+
+## Structure Of The Project
+todo_app.py: FastAPI application file containing all  API routes.
+models.py: Defines oracle database models/tables.
+database.py: Manages database connection and models using Oracle database.
+Create_task.py: Creates new task for a user by taking user_id
+Create_user.py: Creates a new user
+delete_task.py:Deletes the tasks for a particular user by taking user_is and Task_id
+Get_task.py:retrives all the tasks for a particular user by using user_id
+mark_task_done.py:Update the task which is completed by the user
+secure_Authentication.py:Security for the user
+requirements.txt: List of Python dependencies required for the project.
 }
+
+
+## Contributing
+Contributions to this project are welcome! To contribute:
+
+1)Fork the repository.
+2)Create a new branch (git checkout -b feature/your-feature).
+3)Make your changes and commit them (git commit -am 'Add new feature').
+4)Push to the branch (git push origin feature/your-feature).
+5)Create a new pull request.
