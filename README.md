@@ -14,7 +14,7 @@ To set up the project locally, follow these steps:
     ```
 2. Navigate to the project directory:
     ```bash
-    cd to_to_app
+    cd to_do_app
     ```
 3. Install dependencies:
     ```bash
