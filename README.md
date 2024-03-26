@@ -1,10 +1,10 @@
 # todo_app
 todo_app backend Application connecting to oracle database
 
-## Introduction
+# Introduction
 creating backend application for the todo_app for users having user_ids and their tasks to complete.Authentication is also include for user safety.
 
-## Installation
+# Installation
 
 To set up the project locally, follow these steps:
 
@@ -21,7 +21,7 @@ To set up the project locally, follow these steps:
     pip install -r requirements.txt
     ```
 
-## Usage
+# Usage
 
 1)To run the FastAPI server, execute the following command:
 ```bash
@@ -32,7 +32,7 @@ uvicorn main:app --reload
 3)Open your web browser and go to http://localhost:8000/docs to access the Swagger UI for testing the API endpoints.
 4)you can also use tools like [Postman](https://www.postman.com/)
 
-**API Endpoints**
+**Api Endpoints**
 
 POST /CreateUser/{user_id}:
 
