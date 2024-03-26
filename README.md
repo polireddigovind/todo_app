@@ -25,7 +25,7 @@ To set up the project locally, follow these steps:
 1)To run the FastAPI server, execute the following command:
 ```bash
 uvicorn main:app --reload
-
+```
 2)This will start the FastAPI server on http://localhost:8000 by default.
 
 3)Open your web browser and go to http://localhost:8000/docs to access the Swagger UI for testing the API endpoints.
