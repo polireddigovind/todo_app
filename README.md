@@ -20,7 +20,6 @@ To set up the project locally, follow these steps:
     ```bash
     pip install -r requirements.txt
     ```
-
 # Usage
 
 1)To run the FastAPI server, execute the following command:
